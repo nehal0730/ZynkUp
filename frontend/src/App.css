@@ -16,7 +16,7 @@
 }
 
 .landingPageContainer nav h2 {
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: 500;
 
 }
@@ -25,8 +25,20 @@
   display: flex;
   gap: 1.6rem;
   cursor: pointer;
+  font-size: 1.2rem;
 }
 
+.nav1:hover {
+  opacity: 0.8;
+}
+
+.nav2:hover {
+  opacity: 0.8;
+}
+
+.nav3:hover {
+  opacity: 0.8;
+}
 .landingMainContainer {
   display: flex;
   justify-content: space-between;
@@ -59,36 +71,170 @@
   width: auto;
 }
 
-.navBar { 
+/* Home Page Styles */
+.homePageWrapper {
+  min-height: 100vh;
+  background: #f7f7fa;
+  display: flex;
+  flex-direction: column;
+}
+
+.navBar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
-  text-align: center;
+  padding: 24px 40px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin-bottom: 32px;
+}
+
+.navBrand h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin: 0;
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.navActions p {
+  margin: 0 8px 0 0;
+  font-weight: 500;
+  color: #444;
 }
 
 .meetContainer {
   display: flex;
-  padding-inline: 20px;
-  height: 80vh;
-  gap: 10vw;
   justify-content: center;
+  align-items: center;
+  flex: 1;
+  gap: 8vw;
+  padding: 0 40px;
 }
 
 .leftPanel {
-  height: 100%;
   display: flex;
   align-items: center;
+  height: 100%;
+}
 
+.leftPanelContent {
+  /* background: none;
+  padding: 0 0 0 0;
+  border-radius: 0;
+  box-shadow: none; */
+  /* min-width: 340px;
+  max-width: 420px; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.leftPanelContent h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: black;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #4f5b62;
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+
+.meetingInputGroup {
+  display: flex;
+  gap: 16px;
+  margin-top: 2px;
+  width: 100%;
+  /* align-items: flex-end; */
+  /* justify-items: center; */
+}
+
+.meetingCodeInput .MuiInputBase-root {
+  background: #f5f7fa;
+  border-radius: 8px;
+}
+
+.joinButton {
+  font-weight: 700;
+  font-size: 1.08rem;
+  padding: 10px 28px;
+  border-radius: 6px;
+  /* background: ; */
+  color: #fff;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  height: 5vh;
+  width: 6vw;
+  align-self: center;
+}
+
+.joinButton:hover {
 }
 
 .rightPanel {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-.rightPanel > img {
-  width: 30vw;
-  height: auto;
-  border-radius: 20px;
+.rightPanelImageWrapper {
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+  flex-direction: unset;
+  align-items: unset;
+}
+
+.rightPanelImage {
+  width: 400px;
+  max-width: 30vw;
+  height: 400px;
+  max-height: 70vh;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.imageCaption {
+  margin-top: 16px;
+  font-size: 1.05rem;
+  color: #1976d2;
+  font-weight: 500;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .meetContainer {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 10px;
+  }
+  .rightPanelImage {
+    width: 180px;
+    max-width: 60vw;
+    height: 180px;
+    max-height: 60vw;
+  }
+  .leftPanelContent {
+    min-width: 220px;
+    max-width: 90vw;
+    padding: 0;
+  }
+  .rightPanelImageWrapper {
+    padding: 0;
+  }
 }

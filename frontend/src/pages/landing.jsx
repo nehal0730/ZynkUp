@@ -15,15 +15,15 @@ export default function LandingPage() {
 
         <div className='navlist'>
           
-          <p onClick={() => {
+          <p className='nav1' onClick={() => {
             router("/vrnhj34")
           }}>Join as Guest</p>
 
-          <p onClick={() => {
+          <p className='nav2' onClick={() => {
             router("/auth")
           }}>Register</p>
 
-          <div onClick={() => {
+          <div className='nav3' onClick={() => {
             router("/auth")
           }} role='button'>
             <p>Login</p>

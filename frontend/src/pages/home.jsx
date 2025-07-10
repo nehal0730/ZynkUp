@@ -21,48 +21,51 @@ function HomeComponent() {
 
 
     return (
-        <>
-            <div className="navBar">
-                <div style={{ display: "flex", alignItems: "center" }}>
+        <div className="homePageWrapper">
+            <nav className="navBar">
+                <div className="navBrand">
                     <h3>ZynkUp</h3>
                 </div>
-
-                <div style={{ display: "flex", alignItems: "center" }}>
-                    <IconButton onClick={
-                        () => {
-                            navigate("/history")
-                        }
-                    }>
-                        <RestoreIcon />
-                    </IconButton>
-                    <p>History</p>
-
+                <div className="navActions">
+                    <div className="historyGroup">
+                        <IconButton onClick={() => { navigate("/history") }}>
+                            <RestoreIcon />
+                        </IconButton>
+                        <span className="historyText">History</span>
+                    </div>
                     <Button onClick={() => {
                         localStorage.removeItem("token");
                         navigate("/auth")
                     }}>
                         Logout
-
                     </Button>
                 </div>
-            </div>
-
-            <div className="meetContainer">
-                <div className="leftPanel">
-                    <div>
+            </nav>
+            <main className="meetContainer">
+                <section className="leftPanel">
+                    <div className="leftPanelContent">
                         <h2>Providing Quality Video Call Just Like Quality Education</h2>
-                        <div style={{ display: 'flex', gap: "10px" }}>
-                            <TextField onChange={e => setMeetingCode(e.target.value)} id="outlined-basic" label="Meeting Code" variant="outlined" />
-                            <Button onClick={handleJoinVideoCall} variant='contained'>Join</Button>
+                        <p className="subtitle">Connect, collaborate, and learn seamlessly with ZynkUp.</p>
+                        <div className="meetingInputGroup">
+                            <TextField 
+                                onChange={e => setMeetingCode(e.target.value)} 
+                                id="outlined-basic" 
+                                label="Meeting Code" 
+                                variant="outlined" 
+                                className="meetingCodeInput"
+                                // helperText="Enter your meeting code or room name"
+                            />
+                            <Button onClick={handleJoinVideoCall} variant='contained' className="joinButton">Join</Button>
                         </div>
                     </div>
-                </div>
-
-                <div className='rightPanel'>
-                    <img srcSet='/logo3.png' alt="" />
-                </div>
-            </div>
-        </>
+                </section>
+                <section className='rightPanel'>
+                    <div className="rightPanelImageWrapper">
+                        <img srcSet='/logo3.png' alt="ZynkUp Logo" className="rightPanelImage" />
+                    </div>
+                </section>
+            </main>
+        </div>
     )
 }
 
